@@ -1,0 +1,81 @@
+body{
+    background-color:rgb(107, 203, 233);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    }
+.container{
+        background-color: rgb(168, 236, 231);
+        padding: 3rem;
+        border-radius: 16px;
+        box-shadow: 0 4px 6px;
+        width: 250px;
+        max-width: 400px;
+    }
+.container h2{
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 24px;
+}
+.form-group{
+    margin-bottom: 20px;
+}
+.form-group label{
+    display: block;
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color:black;
+}
+.form-group input{
+    width: 250px ;
+    padding: 8px;
+    border-radius: 4px;
+    font-size: 15px;
+    color: black;
+}
+.form-group p{
+    color:black;
+    font-size: 12px;
+    margin: top 5px; 
+}
+.btn{
+    background-color: rgb(13, 13, 14);
+    color: white;
+    font-weight: bold;
+    padding: 8px;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+}
+
+.btn :hover {
+    background-color: green;
+}
+
+.btn-account {
+    background-color: transparent;
+    color: black;
+    font-weight: bold;
+    padding: 8px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    margin-top: 10px;
+    padding: 0.7rem;
+}
+
+
+.success-message{
+    color:greenyellow;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 10px;
+
+}
