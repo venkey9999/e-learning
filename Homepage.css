@@ -1,11 +1,11 @@
 body{
    display: flex;
-   justify-content:right;
+   justify-content:center;
    align-items:top;
    text-align: start;
    margin: 0;
    padding: 0;
-   background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20230704/pngtree-e-learning-in-the-digital-age-3d-rendering-of-books-and-image_3751082.jpg'); 
+   background-image: url('https://static.vecteezy.com/system/resources/thumbnails/049/873/375/small_2x/business-blur-background-photo.jpeg'); 
    background-size: cover;
    background-repeat: no-repeat;
    background-position: center;
@@ -13,13 +13,43 @@ body{
    font-family: sans-serif;
    
 }
+.header {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.header img {
+    width:100px;
+    height: 100px;
+    object-fit: cover;
+    background: transparent;
+    border-radius: 5px;
+    
+
+}
+
+.header h2 {
+    color: black;
+    background-clip: text;
+    background: linear-gradient(90deg, #e7d4c6, #755e64, #577b7e);
+    text-decoration: underline;
+    font-style: oblique;
+    margin: 0;
+}
+
 h2{
-    color :white;
+    color:white;
+    background-clip: text;
+    background: linear-gradient(90deg, #e7d4c6, #755e64, #577b7e);
     text-decoration: underline;
     text-align: start;
     position: absolute;
     top:20px;
-    left: 20px;
+    left: 130px;
     font-style: oblique ;
     
 }
@@ -29,6 +59,7 @@ p{
     left: 20px;
     
 }
+
 
 nav{
     position: absolute;
@@ -43,17 +74,91 @@ nav{
     align-items: center;
 }
 
+.card-container {
+    position: absolute;
+    top: 270px;
+    right: 200px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-end;
+    max-width: 1000px;
+}
+
+.card {
+    background: rgba(0,0,0, 0.4);
+    backdrop-filter: blur(5px);
+    border-radius: 16px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    width: 120px;
+    height: 120px;
+    padding: 20px;
+    text-align:justify;
+    text-decoration: none;
+    color: #333;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.25);
+    background-color: #f0f0f0;
+    cursor: pointer;
+}
+
 
 nav a{
-    color: white;
+    color: black;
+    font-weight:bolder 2px;
     position:relative;
     display: inline-block;
     font-size: medium;
     font-weight: 500;
-    text-decoration: none;
+    text-decoration: underline;
     padding: 0 23px;
 
 }
 nav a:hover{
-    color:black;
+    color:cyan;
+}
+footer {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: end;
+    color: white;
+    font-size: 14px;
+}
+
+footer p {
+    margin: 10px;
+}
+
+.social-icons {
+    margin-top: 8px;
+    align-items: end;
+}
+
+.social-icons a {
+    color: white;
+    margin: 0 10px;
+    font-size: 20px;
+    transition: color 0.3s ease;
+    padding-left: -10px;
+    padding-top: -10px;
+    
+}
+
+.social-icons a:hover {
+    color: cyan;
 }

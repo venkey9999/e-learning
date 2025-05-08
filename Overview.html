@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Overview</title>
+  <link rel="stylesheet" href="Overview.css">
+</head>
+<body>
+  <div class="overview-container">
+    <h1>Overview</h1>
+
+    <div class="summary-cards">
+      <div class="card">
+        <h3>Total Users</h3>
+        <p id="total-users">150</p>
+      </div>
+      <div class="card">
+        <h3>Active Users</h3>
+        <p id="active-users">120</p>
+      </div>
+      <div class="card">
+        <h3>Inactive Users</h3>
+        <p id="inactive-users">30</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+
+        const totalUsers = 150;
+        const activeUsers = 120;
+        const inactiveUsers = 30;
+      
+    
+        document.getElementById('total-users').textContent = totalUsers;
+        document.getElementById('active-users').textContent = activeUsers;
+        document.getElementById('inactive-users').textContent = inactiveUsers;
+      });
+      
+  </script>
+</body>
+</html>

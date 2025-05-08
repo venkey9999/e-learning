@@ -1,45 +1,47 @@
 body{
-    background-color:white;
+    background-color:lightgrey;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-    }
-    .container{
-        background-color:rgb(181, 181, 243);
+}
+.container{
+        background-image: url('https://plus.unsplash.com/premium_photo-1672423154405-5fd922c11af2?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y29ycG9yYXRlJTIwYmFja2dyb3VuZHxlbnwwfHwwfHx8MA%3D%3D');
         padding: 3rem;
         border-radius: 16px;
         box-shadow: 0 4px 6px;
         width: 250px;
         max-width: 400px;
-    }
-    .container h2{
+}
+.container h2{
         text-align: center;
+        color: white;
         font-size: 24px;
         font-weight: bold;
         margin-bottom: 24px;
-    }
-    .form-group{
+        text-decoration: underline;
+}
+.form-group{
         margin-bottom: 20px;
-    }
-    .form-group label{
-        display: block;
+}
+.form-group label{
+        display: white;
         font-size: 15px;
         font-weight: bold;
         margin-bottom: 10px;
-        color:black;
-    }
-    .form-group input{
+        color:white;
+}
+.form-group input{
         width: 250px ;
         padding: 8px;
         border-radius: 4px;
         font-size: 15px;
-        color: black;
-    }
-    .btn{
-        background-color:black;
-        color:white;
+        color:black;
+}
+.btn{
+        background-color:white;
+        color:black;
         font-weight: bold;
         padding: 15px;
         border: none;
@@ -47,39 +49,50 @@ body{
         width: 100px;
         cursor: pointer;
         text-align: center;
-    }
-    .form-group1 {
+}
+.form-group1 {
         display: flex;
         justify-content: space-between;
         align-items: center;
         font-size: 16px;
         margin-bottom: 16px;
+        color: white;
         
-      }
-      .strength-meter {
+}
+.toggle-icon {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        color: #555;
+}
+.toggle-icon:hover {
+        color: #000;
+}
+.strength-meter {
         height: 8px;
         width: 100%;
         background-color: #e0e0e0;
         border-radius: 5px;
         margin-top: 5px;
         position: relative;
-    }
-
-    .strength-meter-fill {
+}
+.strength-meter-fill {
         height: 100%;
         width: 0%;
         background-color: red;
         border-radius: 5px;
         transition: width 0.3s ease;
-    }
+}
 
-    .strength-label {
+.strength-label {
         font-size: 0.9em;
         margin-top: 5px;
         color: #444;
-    }
+}
 
-    #message {
+#message {
         margin-top: 10px;
         font-weight: bold;
-    }
+}

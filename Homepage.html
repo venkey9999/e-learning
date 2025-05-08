@@ -3,17 +3,109 @@
     <head>
         <title>HOMEPAGE</title>
         <link rel="stylesheet" href="homepage.css">
+        <style>
+            .search-container {
+                display: flex;
+                justify-content: center;
+                margin-top: 150px;
+                margin-bottom: 400px;
+                width: 50%;
+                padding: 20px;
+            }
+            .search-bar {
+                display: flex;
+                width: 100%;
+                max-width: 600px;
+            }
+            .search-input {
+                flex-grow: 1;
+                padding: 12px 20px;
+                font-size: 16px;
+                border-radius: 24px;
+                outline: none;
+                border: 1px solid #ccc;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            }
+            .search-input:hover,
+            .search-input:focus {
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            }
+        </style>
     </head>
     <body>
-        <h2>HI!,WELCOME TO E-LEARNING PLATFORM</h2>
+        <div class="search-container">
+            <div class="search-bar">
+                <input type="text" class="search-input" placeholder="Search...">
+            </div>
+        <div class="header">
+            <img src="https://media.licdn.com/dms/image/v2/C4D0BAQEpQovR2brbcg/company-logo_200_200/company-logo_200_200/0/1657176226002?e=2147483647&v=beta&t=MxabCM4oOZPk_eapK8qhpM4EFcc9KN9ykSqw2NJlopg" alt="Company Logo">
+        </div>
+        <h2>SPESHWAY SOLUTIONS HUB</h2>
         <nav>
             <a href="infoRmation.html">Home</a>
             <a href="about.html">About</a>
-            <a href="products.html">Product</a>
+            <a href="Courses.html">Courses</a>
             <a href="servicess.html">Services</a>
-            <a href="">Contact</a>
+            <a href="contact.html">Contact</a>
+            <a href="regestration form.html" id="logoutBtn">Logout</a>
             <span></span>
         </nav>
       
+        <div class="card-container">
+            <a class="card" >
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdfR87O8Ep6bmOFUXgN2NIEv3UgbETXsU1Rw&s"  alt="C-LANG" width="50" height="50"></a>
+            <a class="card" >
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUWH6a0yS_-K_jLW8CVVqZg9sLPbbnVO6fRw&s " alt="C++" width="50" height="50"></a>
+            <a class="card" >
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWzcrd_Hi_h1ac_CqcslY3nhHZvaiN_vTjYQ&s"  alt="JAVA" width="50" height="50"></a>
+            <a class="card" >
+                <img src="https://cdn-icons-png.flaticon.com/512/5968/5968286.png " alt="python" width="50" height="50"></a>
+            <a class="card" >
+            <img src="https://previews.123rf.com/images/dimajarm/dimajarm2301/dimajarm230100010/197883936-devops-icon-software-development-dev-and-it-operations-ops-loop-eight-logo-for-software.jpg" alt="DEVOPS" width="50" height="50"></a>
+        </div>
+        <footer>
+            <p>&copy; 2025 Speshway Solutions Hub. All rights reserved.</p><br>
+            <p>Contact us at: <a href="mailto:info@speshway.com">info@speshway.com</a></p>
+            <div class="social-icons">
+                <a href="https://wa.me/9100006020" target="_blank"><i class="fab fa-whatsapp"></i>
+                    <img src="https://static-00.iconduck.com/assets.00/whatsapp-icon-509x512-xi07s6qp.png" alt="WhatsApp" width="30" height="30"></a>
+                <a href="https://www.instagram.com/speshway?igsh=MW5weGV2M3phOTdvNQ==" target="_blank"><i class="fab fa-instagram"></i>
+                    <img src="https://cdn4.iconfinder.com/data/icons/social-media-2097/94/instagram-512.png" alt="Instagram" width="30" height="30"></a>
+                <a href="https://t.co/Kl2fLiJ3L8" target="_blank"><i class="fab fa-twitter"></i>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2V0EKBoYzIanWtKPyRRbB6rJFCid_g7MrkA&s" alt="Twiter" width="30" height="30"></a>
+                <a href="https://maps.app.goo.gl/71yqyhxAdz8Hzarz5" target="_blank"><i class="fab fa-location"></i>
+                    <img src="https://www.creativefabrica.com/wp-content/uploads/2023/06/19/Map-with-geo-pin-Location-icon-Destina-Graphics-72467669-1-1-580x387.png" alt="location" width="30" height="30"></a>
+            </div>
+        </footer>
+        <script>
+            const searchInput = document.querySelector('.search-input');
+        
+            const headerLinks = {
+                "home": "infoRmation.html",
+                "about": "about.html",
+                "courses": "Courses.html",
+                "services": "servicess.html",
+                "contact": "contact.html"
+            };
+        
+            searchInput.addEventListener('keypress', function (event) {
+                if (event.key === 'Enter') {
+                    const query = searchInput.value.trim().toLowerCase();
+        
+                    if (headerLinks[query]) {
+                        window.location.href = headerLinks[query];
+                    } else {
+                        alert("Page not found. Try: home, about, courses, services, or contact.");
+                    }
+                }
+                document.getElementById("logoutBtn").addEventListener("click", function(e) {
+                    e.preventDefault();
+    
+                    localStorage.clear();
+                    sessionStorage.clear();
+                    
+                    window.location.href = "regestration form.html";
+            });
+        </script>
     </body>
 </html>

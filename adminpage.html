@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="adminpage.css">
+</head>
+<body>
+
+<div class="navbar">
+  <h2>Admin Dashboard</h2>
+</div>
+
+<div class="sidebar">
+  <a href="Dashaboard.html"><i class="fa-solid fa-house"></i> Dashboard</a>
+  <a href="Manage Users.html"><i class="fa-solid fa-users"></i> Manage Users</a>
+  <a href="Overview.html"><i class="fa-solid fa-gear"></i>Overview</a>
+
+</div>
+
+<div class="content">
+  <h1>Welcome, Admin!</h1>
+ 
+  <button id="logout-btn" class="logout-Btn" onclick="logout()">Logout</button>
+</div>
+
+<script>
+function logout() {
+  
+  alert("Logging out...");
+  window.location.href = "login.html";
+}
+document.getElementById("logout-btn").addEventListener("click", function(e) {
+  e.preventDefault();
+
+  localStorage.clear();
+  sessionStorage.clear();
+  
+        window.location.href = "loginform.html";
+});
+</script>
+
+</body>
+</html>

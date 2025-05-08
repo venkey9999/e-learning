@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>LOGIN DETAILS</title>
     <link rel="stylesheet" href="logininfo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
     <div class="container">
@@ -12,26 +14,38 @@
                 <label for="email">Email</label>
                 <input type="text" id="email" name="email" required>
             </div>
+
             <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" id="password" name="password" required>
+                <div style="position: relative;">
+                    <input type="password" id="password" name="password" required style="padding-right: 10px;">
+                    <i class="fa-solid fa-eye toggle-icon" onclick="togglePassword('password', this)"></i>
+                </div>
                 <div class="strength-meter">
                     <div id="strength-bar" class="strength-meter-fill"></div>
                 </div>
                 <div id="strength-label" class="strength-label"></div>
             </div>
+
             <div class="form-group1">
-                <label>
-                <input type="checkbox" name="remember"/>Remember me
-                </label>
-                <a href="#">Forget password?</a>
+                <label><input type="checkbox" name="remember"/> Remember me</label>
+                <a href="forgetpassword.html">Forget password?</a>
             </div>
+
             <button type="submit" class="btn">LOGIN</button>
             <div id="message"></div>
         </form>
     </div>
 
     <script>
+        function togglePassword(fieldId, icon) {
+            const input = document.getElementById(fieldId);
+            const isPassword = input.type === "password";
+            input.type = isPassword ? "text" : "password";
+            icon.classList.toggle("fa-eye");
+            icon.classList.toggle("fa-eye-slash");
+        }
+        
         const passwordInput = document.getElementById("password");
         const strengthBar = document.getElementById("strength-bar");
         const strengthLabel = document.getElementById("strength-label");
@@ -60,25 +74,51 @@
             strengthLabel.innerText = labels[strength - 1] || "Very Weak";
             strengthLabel.style.color = colors[strength - 1] || "#ff4d4d";
         }
-
         document.getElementById("LoginForm").addEventListener("submit", function (event) {
             event.preventDefault();
-
+        
             const email = document.getElementById("email").value.trim();
             const password = document.getElementById("password").value.trim();
-
+        
             if (email === "" || password === "") {
                 message.style.color = "red";
                 message.innerText = "All fields are required!";
                 return;
             }
-
-            message.style.color = "green";
-            message.innerText = "Login successful! Redirecting...";
-            setTimeout(() => {
-                window.location.href = "Homepage.html";
-            }, 1500);
+        
+            if (email === "admin@gmail.com" && password === "admin@123") {
+                message.style.color = "green";
+                message.innerText = "Admin login successful! Redirecting...";
+                setTimeout(() => {
+                    window.location.href = "adminpage.html";  
+                }, 1500);
+                return;
+            }
+            if (email === "teachers@gmail.com" && password === "Teachers@123") {
+                message.style.color = "green";
+                message.innerText = "Teacher login successful! Redirecting...";
+                setTimeout(() => {
+                    window.location.href = "Homepage.html";  
+                }, 1500);
+                return;
+            }
+        
+    
+            const storedEmail = localStorage.getItem("registeredEmail");
+            const storedPassword = localStorage.getItem("registeredPassword");
+        
+            if (email === storedEmail && password === storedPassword) {
+                message.style.color = "green";
+                message.innerText = "Login successful! Redirecting...";
+                setTimeout(() => {
+                    window.location.href = "Homepage.html"; 
+                }, 1500);
+            } else {
+                message.style.color = "red";
+                message.innerText = "Invalid email or password!";
+            }
         });
+        
     </script>
 </body>
 </html>

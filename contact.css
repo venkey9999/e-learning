@@ -1,0 +1,35 @@
+body {
+    background-image: url('https://img.freepik.com/free-vector/wave-background-abstract-gradient-design_483537-3688.jpg'); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    text-align:start;
+    padding-left: 20px;
+}
+
+h2 {
+    color: GREEN;
+    margin-bottom: 20px;
+    text-decoration: underline;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    margin: 10px 0;
+    display: inline-block;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #00aaff;
+}

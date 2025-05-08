@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Manage Users</title>
+  <link rel="stylesheet" href="manager users.css">
+</head>
+<body>
+  <div class="manage-container">
+    <h1>Manage Users</h1>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Username</th>
+          <th>Email</th>
+          <th>Student_Fee</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Venkey</td>
+          <td>venkeytony11@gmail.com</td>
+          <td>10,000</td>
+          <td><span class="active">Active</span></td>
+          <td>
+            <button class="edit-btn">Edit</button>
+            <button class="delete-btn">Delete</button>
+          </td>
+        </tr>
+        <tr>
+          <td>bhanu prakash</td>
+          <td>Bhanu463@gmail.com</td>
+          <td>10,000</td>
+          <td><span class="inactive">Inactive</span></td>
+          <td>
+            <button class="edit-btn">Edit</button>
+            <button class="delete-btn">Delete</button>
+          </td>
+        </tr>
+        <tr>
+          <td>Viki</td>
+          <td>viki123@gmail.com</td>
+          <td>10,000</td>
+          <td><span class="active">Active</span></td>
+          <td>
+            <button class="edit-btn">Edit</button>
+            <button class="delete-btn">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+    <script>
+        const editButtons = document.querySelectorAll('.edit-btn');
+      
+        editButtons.forEach(button => {
+          button.addEventListener('click', function() {
+            const username = this.closest('tr').querySelector('td:first-child').textContent;
+            if (confirm('Are you sure you want to edit user: ' + username + '?')) {
+                this.closest('tr').edit();
+              }
+
+          });
+        });
+        const deleteButtons = document.querySelectorAll('.delete-btn');
+      
+        deleteButtons.forEach(button => {
+          button.addEventListener('click', function() {
+            const username = this.closest('tr').querySelector('td:first-child').textContent;
+            if (confirm('Are you sure you want to delete user: ' + username + '?')) {
+              this.closest('tr').remove();
+            }
+          });
+        });
+      </script>
+</body>
+</html>
